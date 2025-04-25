@@ -37,15 +37,7 @@ export const uploadVideoService = async (file) => {
   return savedVideo;
 };
 
-export const compressVideo = (inputPath, outputPath) => {
-  return new Promise((resolve, reject) => {
-      ffmpeg(inputPath)
-      .outputOptions('-vcodec libx264', '-crf 28')
-      .on('end', () => resolve(outputPath))
-      .on('error', reject)
-      .save(outputPath);
-    });
-};
+
 
 
 // Trim video
